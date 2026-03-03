@@ -10,5 +10,8 @@
     "timer"
   ],
   "author": "Vladislav Tkachev",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-notifier": "^10.0.1"
+  }
 }

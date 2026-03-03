@@ -1,3 +1,4 @@
+const notifier = require("node-notifier");
 let timerTime = process.argv[2];
 
 function preparationTime(timeString) {
@@ -27,5 +28,9 @@ function preparationTime(timeString) {
 }
 
 setTimeout(() => {
-  console.log("BEEEP!!!");
+  notifier.notify({
+    title: "Timer",
+    message: "BEEEP!!!",
+    sound: true,
+  });
 }, preparationTime(timerTime));
