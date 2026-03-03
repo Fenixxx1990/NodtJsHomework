@@ -1,3 +1,5 @@
+let timerTime = process.argv[2];
+
 function preparationTime(timeString) {
   let hours = 0,
     minutes = 0,
@@ -24,8 +26,6 @@ function preparationTime(timeString) {
   return (hours * 3600 + minutes * 60 + seconds) * 1000;
 }
 
-const time = "3s";
-
 setTimeout(() => {
   console.log("BEEEP!!!");
-}, preparationTime(time));
+}, preparationTime(timerTime));
