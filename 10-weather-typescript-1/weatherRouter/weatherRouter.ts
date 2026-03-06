@@ -19,16 +19,16 @@ weatherRouter.get("/:cityName", async (req, res) => {
       const error = e as AxiosError;
 
       if (error.response?.status === 404) {
-        printError("Неверно указан город");
+        res.send(printError("Неверно указан город"));
       } else if (error.response?.status === 401) {
-        printError("Неверно указан токен");
+        res.send(printError("Неверно указан токен"));
       } else {
-        printError(error.message || "Произошла ошибка");
+        res.send(printError(error.message || "Произошла ошибка"));
       }
     } else if (e instanceof Error) {
-      printError(e.message);
+      res.send(printError(e.message));
     } else {
-      printError("Произошла неизвестная ошибка");
+      res.send(printError("Произошла неизвестная ошибка"));
     }
   }
 });
